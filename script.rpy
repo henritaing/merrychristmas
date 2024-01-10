@@ -13,9 +13,7 @@ define t = Character('Tom', color = "#006f64")
 
 
 # True if the player has decided to compare a VN to a book.
-default route_A = False
-default a_affinity = 0
-
+default route_A = 0
 default choixsuite2_1 = False
 
 
@@ -262,7 +260,7 @@ label start:
     "Time flew at the beginning, but at around ten thirty, it met a slump as there wasn't much activity. When there wasn't much to do, Elise used to read a book or chat with the regulars. But today, she felt too exhausted for anything."
     "Perhaps it was because she wasn't sleeping in her own bed. Or maybe taking a shift at the restaurant yesterday night was too much."
     
-    show sebstian smile at left
+    show sebastian smile at left
 
     s "Have you had enough sleep? You look slightly off."
 
@@ -295,6 +293,9 @@ label start:
 
     "As soon as Elise arrived, she could smell the mushrooms and the cooked rice. She took off her brown boots and peeked her head through the hallway."
 
+    show jeanne casual smile at left
+    show lise smile at right
+
     e "I'm home."
     j "Welcome back."
 
@@ -316,7 +317,7 @@ label start:
     label suite2_1_1:
 
         e "Not telling."
-        j "“So secretive! So you're not telling me about your plans for Christas either?”"
+        j "So secretive! So you're not telling me about your plans for Christas either?"
         e "This, I can."
 
     label suite2_1_2:
@@ -363,7 +364,6 @@ label start:
         "Jeanne went to the sink and rinsed the plates with cold water before placing them in the dishwasher."
 
         j "Do you have anything planned for Christmas?"
-
 
 
     j "If you want to, you can come over."
@@ -478,6 +478,9 @@ label start:
     
     scene Livingroom_Night with fade
 
+    show jeanne casual smile at left
+    show lise smile at right
+
     "Elise sank in couch, her puffed out face reflected on the large TV screen. Jeanne told her the truth. Her mother did cook too much."
 
     j "Found it."
@@ -502,6 +505,7 @@ label start:
     "Jeanne gasped."
 
     #transition
+    scene black with dissolve
     scene park with fade
 
     "Elise was lying down on the bench, reconsidering her life choices. Her tummy hurt so much, and she couldn't get rid of that hellish headache. Fortunately, it didn't rain. With her light brown jacket and the early morning rays of light, she was able to keep her body barely warm."
@@ -564,6 +568,9 @@ label start:
     scene black with dissolve
     scene bg Livingroom_Night with fade
 
+    show jeanne casual smile at left
+    show lise smile at right
+
     j "You're telling me that the first time you met Arthur, you were hungover, sleeping on a bench all by yourself, threw up on him, and fell unconscious. Way to make a first impression."
     e "I don't think he remembers it."
     j "I don't think so either. He tends to forget a bunch. That's why he writes so much in his journal."
@@ -588,6 +595,8 @@ label start:
     "And so, like every time they drank together, Jeanne fell asleep first. Her friend didn't have much resistance to alcohol and tiredness. Training didn't help either."
     "Her throat felt so dry to the point where she thought that the hangover would be fatal without water."
 
+    scene black with dissolve
+
     menu:
 
         "Go to the kitchen downstairs.":
@@ -606,6 +615,11 @@ label start:
         "Elise snuck into the kitchen, but for some reason, the lights were on."
         
         a "Oh? You're not sleeping?"
+        
+        show arthur smile at left
+        show lise smile at right
+
+        #fright
 
         "Elise almost drop her glass out of fright. She hadn't seen him and heard him. That was why the lights were on. Stupid."
 
@@ -668,8 +682,14 @@ label start:
         a "To thank you for taking care of my sister."
 
         #transition
+        scene black with dissolve
+        scene bg kitchen with fade
+
 
         "A minute later, they reappeared in the kitchen with their gifts. One was beautifully packed and the other was messily covered in black present wrap."
+
+        show arthur smile at left
+        show lise smile at right
 
         "Arthur scratched his head in embarrassment."
 
@@ -707,16 +727,19 @@ label start:
     #transition to Chapter 3
     scene black with dissolve
     #Chapter 3
-    show text "Chapter 3" with Pause(1.5)
+    show text "Chapter 3" with Pause(1.5) 
     scene black with dissolve
-
+    scene bg Livingroom_Night with fade
+    
     "A few days ago, the two girls had returned to London after celebrating New Year's Eve at a common friend's house, for the start of the semester, and had found themselves mired in a deep pit of unmotivation."
     "Arthur would return home in a week so Jeanne insisted that Elise stayed home although the heating of her building had already been repaired." 
     "Elise could only agree. But, since she didn't do much, apart from going to work, class, and overthinking about her nonexistent love life, she was slowly getting depressed."
     "On the other hand, Jeanne was a slacker and a homebody by nature so she enjoyed going back to her life as a stay-at-home university student." 
     
-    show jeanne casual smile at left
+    scene black with dissolve
+    scene bg street_night with fade
     
+    show jeanne casual smile at left
     show lise turtlevestsmile at right
 
     j "You're getting depressing, you know. Let's get snacks. You'll see that life isn't that bad."
@@ -753,6 +776,10 @@ label start:
     e "Does he have one?"
     j "How come you never asked him about it?"
     e "I don't know. I thought that maybe, you'd tell me if that was the case."
+
+    scene black with dissolve
+    scene bg Backstreet_Summer_Night with fade
+    
     j "I guess so. Would you rather have chips or ice cream?"
 
     menu:
@@ -784,13 +811,23 @@ label start:
 
 #appartment 
 
+    scene black with dissolve
+    scene bg kitchen_night with fade
+    
+    show lise turtlevestsmile at right
+
     "Elise woke up early to open the café. While she poured the boiling water into her green mug, she heard a door creaking."
     "Pink pajamas with winged pigs on it, disheveled black hair, yawning like a lion, Jeanne trudged to one of the kitchen chairs."
+
+    show jeanne casual smile at left
+
     "Elise consulted the time on the clock, then on her phone. It was indeed seven in the morning. Jeanne put her head in their arms without a word and soon began to snore."
 
     e "What is she doing?"
 
     "Elise laughed before jumping at the sound of keys." #jumping
+
+    show arthur normal at left
 
     a "Oh home, sweet freaking home."
     a "Five damned pounds for a train ticket. And they still can't change their old weakass fucking trains."
@@ -812,11 +849,17 @@ label start:
     a "What do you have in exchange?"
 
     "The negotiations went straight on full steam."
+    
     "Meanwhile, Elise drank her black tea, and brushed her teeth. She was delighted to see Arthur again."
+
+    scene black with dissolve
+    scene bg bathroom_post_processed with fade
+
+    show lise turtlevestsmile at right
 
     "'I still would have loved a hug. Even a friendly one', Elise thought. 'I guess I'll go back home today.'"
 
-    "Jeanne came into the bathroom."
+    show jeanne casual smile with moveinright
 
     j "I'll tag along."
 
@@ -847,8 +890,14 @@ label start:
 
     #café
 
+    scene black with dissolve
+    scene bg cafe with fade
+
     "At the end, Jeanne accompanied Elise through her whole morning. It'd serve as a trial, the boss' son said." 
     "Contrary to his expectations based on what Elise shared about her, Jeanne proved to be quite competent with customers. During rush hours, she displayed remarkable composure and during the quieter times, she contributed to the joyful atmosphere of the café. "
+
+    show jeanne casual smile at left
+    show sebastian smile at right
 
     j "So, was my performance up to your standards, chief?"
     s "It was. Here. Read it and sign it."
@@ -864,7 +913,14 @@ label start:
 
     "Jeanne dragged Elise through the exit door."
 
-    #street 
+    hide jeanne with moveoutright
+
+    #street
+    scene black with dissolve
+    scene bg Street_Summer_Evening with fade
+
+    show jeanne casual smile at left
+    show lise smile at right
 
     j "He looks sad, doesn't he? Did you talk to him about your crush on Arthur?"
     e "I did, but I don't think that's the problem."
@@ -890,15 +946,25 @@ label start:
     j "As it was possible."
 
     #house
+    scene black with dissolve
+    scene bg room with fade
 
     "Elise glanced at Arthur's bedroom. In total, she had lived there for three weeks."
     "She had gotten used to smiling at the rows of romance novels sorted by their authors' name on the bookshelves; she had gotten used to seeing the folded men's shirt and pants in the wardrobe; and she had gotten used to sleeping in this single bed with a single pillow and a single duvet." 
     "She put the sheets in the laundry machine and waved goodbye to Jeanne who lazily waved her hand without detaching her eyes from the TV."
 
+    scene black with dissolve
+
     #car
     "Arthur waited for her in his car." 
     "She put her suitcase in the trunk and sat beside him."
     "She typed her address on the board, she lived in Kensington which was on the other side of London, in the west."
+
+    scene bg test_render_day with fade
+    
+    show arthur smile at left
+    show lise smile at right
+
     "Elise asked Arthur about his holidays."
     "He thought long before speaking like he was recalling every detail and choosing the ones that would interest her. While his voice was full of energy, the strained traits of his face said otherwise."
     "He began by his family visit in Munich which was cut short, because he had to help with the cottage renovations."
@@ -950,6 +1016,8 @@ label start:
 
     "The GPS notified them that they reached their destination. He parked the car near the block and accompanied her to the front door of her residence."
 
+    scene bg someplace_usa_night with fade
+
     e "Thanks for the ride."
     a "A pleasure."
     e "See you."
@@ -957,6 +1025,11 @@ label start:
     "Her arms wanted to reach for him, but they stayed aligned to her body. She bit her lips. What would she have to do to have a moment like that with him again? "
 
     a "See you, Elise."
+
+    "Arthur waved at her."
+    "She waved back."
+    
+    scene black with dissolve
 
     "She waited for the lift to arrive and politely greeted the random neighbors that waited with her. At the fourth floor, she left saying a small goodbye and walked to her door."
     "A shadow covered her face as her keys clicked." 
@@ -969,8 +1042,13 @@ label start:
     "Elise retrieved her laptop and textbook from her school bag. One hour left, and she had to leave for the restaurant, so better make it productive."
 
     #café
+    scene black with dissolve
+    scene bg cafe with fade
 
     "Another day at the café, Jeanne bluntly pinned Sebastian's gaze when Elise went into the reserve to take a break because no one was coming into the café."
+
+    show jeanne casual smile at left 
+    show sebastian smile at right
 
     j "Are you okay? Like really okay?"
 
@@ -999,10 +1077,16 @@ label start:
     #Chapter 4
     show text "Chapter 4" with Pause(1.5)
     scene black with dissolve
+    scene bg cafe with fade
 
     "The atmosphere at the café didn't change. It had shifted. Sebastian looked better. He even became more expressive. Her grandmother's condition had improved. On the other side, Elise sighed at every opportunity."
 
     #home
+
+    scene black with dissolve
+    scene bg kitchen_night with fade
+    show jeanne casual smile at left
+    show lise smile at right
 
     "Jeanne invited her home to discuss what bothered her. She made her sit in front of her at the kitchen table."
     "Next, she brought her bedside lamp and directed towards Elise who frowned, before switching on the living room lights and switching off the kitchen ones to create the desired and peculiar ambiance."
@@ -1053,43 +1137,15 @@ label start:
     j "The others are for Arthur."
 
     #home
+    scene black with dissolve
+    show bg_condo with fade
 
-    "Arthur's day began precisely at seven o'clock with mint tea, the cheapest one you could find in the supermarket."
-    "He usually had class at nine, but he liked this peculiar feeling you had when you woke up early, like you had all the time in the world to do anything. He summarized the main things that occurred the day before in his journal, and planned his day."
-    "Nevertheless, planning had its limits. There were things that he couldn't plan for and didn't want to plan for. They caused him quite a headache, but also kept his routine exciting"
-    "London's sun had decided to do his job today, so he decided to go to the university. In one of the hallways, he met his good friend Carolina Humble. Her sharp and proud nose was lifted high, signifying her good mood."
-
-    c "First class of the month, Arthur?"
-
-    "She asked though she already knew the answer."
-
-    a "Did something good happen?"
-    c "Nothing that concerns you."
-    a "Sucks, I'll have to throw away the gift I have in my bag."
-    c "Please don't. And don't tell me it's because you saved it in your agenda."
-    a "It doesn't matter, does it? Happy Birthday, Carolina."
-
-    "Arthur tossed her a little red box."   
-    
-    c "Thanks. I'll open it afterwards. It took you two years to think of writing my birthday on your agenda. I don't know if I should be vexed or pleased."
-    a "Pleased. I only put the bare minimum on my agenda."
-    c "Complaining worked. Don't forget to put it again on your agenda, haha."
-
-    "Giving Carolina her birthday gift, check. He was proceeding smoothly in his to-do-list of the day."
-    "The morning class went smoothly without anything special happening." 
-    "Five or six students had been actively listening and participating, the others had been dead-silent, certainly thinking about how to get a passing grade with minimal effort. In a lot of ways, school was truly a carbon copy of society, or maybe, it would be better to say that society was the reflection of education followed in school."
-    "He grabbed a quick sandwich and hurried to the coffee shop next to the church."
-
-    a "Late as usual."
-    "His friends were waiting for him. He had funded the company with them and they would meet there almost every day to eat. Of course, they would talk about work, but it was more a moment to chill."
-
-    a "Shit. It's already two. I gotta go. Private tutoring."
-
-    "He ran to his student's place. He was a bit late, but his student was used to his five-minute lates. He gave him class and additional homework to do." 
-    "On busy days like that, he liked to go to this discreet bakery, hidden from plain sight, in the corner of a sketchy street. It had the best croissants he ate in London, its many layers of crust and intense taste of butter reminded him of his highschool years in Paris. Croissant never failed him."
-    "Afterwards, he headed home, cooked dinner and watched an anime Jeanne chose while eating. Strangely enough, Jeanne dozed off during the show. She looked like she didn't enjoy it as much as before."
+    "Arthur cooked dinner and watched an anime Jeanne chose while eating. Strangely enough, Jeanne dozed off during the show. She looked like she didn't enjoy it as much as before."
     "He took a sip of water when Jeanne suddenly pulled a brown cap and sunglasses from nowhere. A blinding light shone on his face as the lights of the living room were turned off."
     "What was up with her again?"
+
+    show arthur smile at left
+    show jeanne casual smile at right
 
     j "Hey. Big bro. Do you have someone you like?"
 
@@ -1110,17 +1166,35 @@ label start:
     a "Oh. It should be the one near where I usually go. I'll come by."
     j "No, thank you. So, who is she?"
     a "A good friend."
-    j "Wait, is it Carolina?"
-    a "Yeah."
-    j "Ah, I'm dumb. I should have guessed."
-    a "Yup."
-    j "Just to be sure. Don't you have anybody you fancy? Not love, but like?"
-    a "Nope."
-    j "Good. I'll go bck to my room to study."
-    a "Sure you will weirdo."
-    j "See you for dinner, weirdo number two."
+
+    menu:
+        "Stay silent.":
+            jump suite4_1_1 
+
+        "Continue the investigation.": 
+            jump suite4_1_2
+
+    label suite4_1_1:
+
+        "Jeanne sighed and rolled her eyes."
+
+    label suite4_1_2:
+        
+        j "Cute. Romance will be the genre then." 
+        j "Wait, is it Carolina?"
+        a "Yeah."
+        j "Ah, I'm dumb. I should have guessed."
+        a "Yup."
+        j "Just to be sure. Don't you have anybody you fancy? Not love, but like?"
+        a "Nope."
+        j "Good. I'll go bck to my room to study."
+        a "Sure you will weirdo."
+        j "See you for dinner, weirdo number two."
 
     #restaurant
+    scene black with dissolve
+    scene bg Restaurant_A with fade
+
     "Elise put her phone back in her trousers and went out of the staff room. Her five-minute break was over."
     "He was not in a relationship."
     "She sighed in relief. She could work in an approximate peace of mind."
@@ -1129,6 +1203,8 @@ label start:
 
     "A colleague bumped into her and profusely apologized. Fortunately, he managed to not drop anything."
     
+    show lise turtleblacksmile at left
+
     e "It's ok. I wasn't looking."
 
     "The table 8 is waiting for order, I'm taking my break, he said before rushing off to the kitchen."
@@ -1142,6 +1218,9 @@ label start:
 
     "She wrote down their orders and asked them if they wanted anything else to which they said no."
     "She retrieved the menu cards, and lifted her head up from the glowing screen, before squinting."
+
+    show arthur gsmile at right
+
     "Arthur grinned with his teeth fully showing. He had combed his mid-long dark hair and was wearing a red tie with a white shirt, looking handsome and neat. In front of him, a man in his thirties in a black suit she didn't know was frowning, and asked if the terms of the contract were that bad."
     "Arthur said this wasn't that, before talking to her."
 
@@ -1159,9 +1238,35 @@ label start:
     a "See you in a second."
     e "See you."
 
+    hide arthur
+
     "She said, shrieking inside."
     "'I didn't know you could be interested in anything other than your job,' she heard as she speedwalked away."
-    "While taking the orders and serving others, she couldn't help but throw occasional glances at his table. When their order was ready, she hurried to their table. She put the two pizzas down, and Arthur chuckled."
+    "While taking the orders and serving others, she couldn't help but throw occasional glances at his table."
+
+    "Arthur waved at her."
+
+    menu:
+
+        "Wave back.":
+            jump suite4_2_1
+
+        "Act like you didn't see it.":
+            jump suite4_2_2
+
+    label suite4_2_1:
+
+        "Elise waved back."
+        "He gave him a big smile."
+    
+    label suite4_2_2:
+
+        "Elise went to the next customer while sighing. She was such a coward sometimes."
+
+
+    "When their order was ready, she hurried to their table. She put the two pizzas down, and Arthur chuckled."
+
+    show arthur
 
     e "Something's wrong?"
     a "No, it's just nice to see you."
@@ -1173,23 +1278,37 @@ label start:
     a "Thanks Elise."
 
     "She escaped red, but alive."
+
+    hide arthur
+
     "Eventually, they finished eating and looked for her eyes to pay the bill. But Elise was busy at another table, so another waiter came over. She pressed her lips together in regret."
     "When her night ended, the cook told her a duo ordered dessert for her before leaving. It was a dark chocolate tiramisu."
     "Elise held it like a treasure. She ate a spoonful of it and winced."
 
     "“Ah, I forgot that you didn't like coffee,” the cook said. “I should have made you another dessert.”"
+
     e "It's fine."
     "A bright smile hung on her lips."
     e "I like this one."
 
+    scene black with dissolve
+    scene bg Bedroom_Evening with fade
+
     "Teasing Elise was one of Jeanne's favorite things to do, but now that her friend's feelings deepened, she didn't feel like doing it anymore. Jeanne simply watched as Elise took baby steps towards Arthur. Elise even refused her help, “It'd feel too forceful and fake”."
     "So Jeanne carried on her leisurely daily life."
+
+    show jeanne casual smile
+
     "One day, she heard a feminine voice she didn't recognize in the kitchen. She had two alternatives. Investigate or stay holed up in her room. By now, you'd have guessed what she chose. She put on her headphones and resumed her anime."
     "But then, someone knocked on her door. She ignored it, and she shouldn't have. Arthur slammed the door open and threw her pillow right on her face."
 
+    show arthur with moveinright
+
     a "Grenade!"
-    
+
     "He shouted before running away."
+
+    hide arthur with moveoutright
 
     j "Fuck you!"
 
@@ -1247,8 +1366,7 @@ label start:
 
     "The random snack time transformed into an orientation session. Overwhelmed by the kindness and the amount of information, Jeanne felt more lost than ever, but she had faith that it'd work out eventually. Until then, she crawled to her bed as Arthur drove Carolina home."
 
-#chapter 5
-#café
+    #chapter 5
     #transition to Chapter 5
     scene black with dissolve
     #Chapter 5
@@ -1259,7 +1377,9 @@ label start:
     "They had booked a study room a month in advance to avoid having to fight for the library seats. Exam period was that dreadful." 
     "The seats were nice and comfy. The tables were clean and well-lit. Come to think of it, there really were people whose jobs were to design chairs and tables. In order to pay them respect, she should take a picture of them, right?"
 
+    show lise smile at left
     e "Quit procrastinating. Your reports aren't going to write themselves."
+    show jeanne casual smile at right
     j "It's already been two days in a row. Let's take a break, please."
 
     "Elise shut her laptop."
@@ -1271,6 +1391,10 @@ label start:
 
     "They took their laptops with them in precaution and closed the door tightly."
     "The cafeteria was full of students cramming for their exams so they found a random staircase next to a skatepark outside."
+
+    scene bg another_school_building_day with fade
+    show lise smile at left
+    show jeanne casual smile at right
     "Grey. That was the taste of the coffee Jeanne felt on her tongue as she looked at the moody skies and the concrete walls surrounding her in silence. But, the taste changed as soon as she saw Elise texting. A newfound sweetness circled around her palette. She held back from teasing her friend, but she couldn't hold back her curiosity."
     
     j "How's it going?"
@@ -1324,11 +1448,17 @@ label start:
 
     #transition
 
+    scene black with dissolve 
+    show jeanne smile at center
     "Spring rolled up with a new shine. Jeanne's smile couldn't get wider. It had been three weeks since she had completed her midterm finals, submitted her reports and performed her presentations. She had been finally relieved from her student duty and was now committing fully to her sofa and bed."
     "However, today, she changed from her pajamas to a random tracksuit. Going out once in a while to somewhere other than the library and treating herself with a delicious meal would do her good. A look in the mirror was enough to understand how much she needed that outing. Her already white skin had become paler and her muscles had lost their vigor. Even her butt which she was proud of, had flattened from sitting on the chair and laying on the bed all day."
+    
+    scene bg Street_Summer_Evening
+    
     "On the road, she met her brother who was taking his daily walk."
-
-    a "“Don't tell me you're going to meet friends"
+    show arthur smile at right
+    
+    a "Don't tell me you're going to meet friends"
 
     "He said with a shocked face."
 
@@ -1354,10 +1484,16 @@ label start:
     
     j "I saw that you bought fresh ingredients for dinner. Invite Elise, I'm sure she'd be happy to join you for a meal. And, she doesn't work tonight. Otherwise, she'd eat some crappy food. Later."
 
+    hide jeanne with moveoutleft
+
     "He waved her goodbye as she quickened her pace."
+
+    scene black with dissolve
 
     #transition
 
+    scene lise smile at center
+    
     "Elise had decided to properly wash her hair, but it was taking hours. It had gotten much longer. It reached her waist now. She was rinsing it thoroughly after using her new conditioner when her phone rang in the kitchen."
     "After enveloping her hair in a towel, and her body in another, she treaded carefully to not bump into her trash bin or her piles of study books."
 
@@ -1372,8 +1508,12 @@ label start:
     "She dried off her hair and bolted off to the bus station and caught the bus in extremis. Wiping the sweat off her forehead, a wide grin was placated on her face. She was so thrilled and stressed out at the same time that she couldn't stop her finger from nervously tapping on her leg."
     "Arthur appeared at the door in an red apron over a black shirt, black joggings."
 
+    
+    show arthur smile at right
     a "Do you drink?" 
     e "Sure."
+
+    show bg_condo
 
     "He opened a bottle of wine and poured themselves two glasses."
     "Then, Elise realized she came empty-handed."
