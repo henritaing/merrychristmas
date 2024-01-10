@@ -1510,6 +1510,8 @@ label start:
 
     
     show arthur smile at right
+
+#show elise with dress
     a "Do you drink?" 
     e "Sure."
 
@@ -1544,11 +1546,100 @@ label start:
     "Elise tented her fingers."
 
     e "And you?"
-    a "Can’t say I didn’t work hard, but would it be correct to say that it was hard work?"
+    a "Can't say I didn't work hard, but would it be correct to say that it was hard work?"
     e "I'm sure it was."
     a "I didn't know you worked at the restaurant too."
-    e "I do some shifts here and there. Nothing too big."
+    e "I do some shifts here and there. Nothing too big. I started a while ago. Summer before starting college."
+    a "To make pocket money?"
+    e "Could say that. It's not as good as funding a successful startup, I have to say."
+    
+    "Arthur's left brow rose."
 
+    a "Waiting tables is harder."
+    e "Why do you say so?"
+    a "Because it is physically and mentally demanding. Difficult customers. Running around the whole night. The noise, the smell and the lights. Whereas, building a company with friends around a subject you enjoy is a different matter altogether."
+    e "It's tiring some days for sure."
+
+    "The corner of her eyes curved."
+
+    e "It is also rewarding some other days. Birthdays, for example. I love seeing families smile together around a great meal and a beautiful cake."
+    a "I see."
+
+    "On cue, the oven and his mobile rang."
+    "He served the steaming lasagnas winced."
+
+    a "Sorry. Urgent call. Sorry, really. I hate people who're on their phones during meetings and dinners too."
+
+    "He went into his room, leaving Elise with only her glass and her thoughts."
+    "By the time he came back, the lasagnas had gone warm and her glass had gone empty."
+
+    a "Sorry again."
+    a "It was faster than I expected."
+    e "The call?"
+    a "The job interview results."
+
+    "She stood up so fast, the room stood with her."
+
+    e "What? Are you going to join a charity association?"
+    a "Charity? I did mention that. But no, I'm going to Paris, to give a hand to a friend, Tom, the one you met at the restaurant."
+    a "He's a bit older and has his own company which is currently expanding. He urgently needs new, trustworthy and competent collaborators. Of course, the job in itself is interesting and the offer too, but it means that I'll have to step down from my CEO position at my company."
+
+    "She felt her composure break as she sat back down."
+
+    e "When are you going?"
+    a "A week after my master's thesis presentations. In a month or so. Well, I don't think I'll miss London."
+
+    "A piece of her heart fell off on her plate."
+
+    a "Don't make that face."
+
+    "Contradicting thoughts filled her head. She sat back down and nibbled at the lasagna. It was sadly well-made."
+
+    e "Are you set on it?"
+    a "I will need to discuss with my board next month, but yes, I guess. One of my colleagues will join too. She was getting tired of London, she was like ‘Where are you going like that? Trying to get out of London first, uh?"
+
+    "Arthur chuckled."
+
+    a "She's quite the competitive one."
+
+    "Arthur gave her a glance."
+
+    a "Hey, are you okay?" 
+    e "Yes."
+
+    "The news of him going to work abroad had shaken her."
+
+    e "The lasagna was delicious."
+
+    "Though the last spoons tasted bitter."
+
+    a "A pleasure. Do you want dessert? I've baked a lemon cake."
+    e "No, that's fine. I'll go home. It's late."
+
+    "She bit her lips. Her tone came off a little rude."
+
+    e "I think the exams tired me out."
+
+    "She went to get her coat by reflex, but forgot that she didn't bring one."
+
+    a "I'll drive you home. It should be quite chilly outside."
+
+    "She avoided his eyes in a desperate attempt to contain her sudden surge of emotions."
+
+    e "It's fine. It's fine."
+
+    "Elise couldn't tell him it was about him leaving London. Although they had become much closer, she wasn't anybody to him. Even if she was, she would never want him to base his career choices on her personal feelings. It would be too selfish and unfair. Wouldn't it?"
+    "His phone rang again."
+    
+    a "I'm sorry."
+
+    "She opened the door."
+
+    e "Don't apologize. It's fine. Work is work. I know what it is. I was going to go regardless."
+
+    "Elise tried to smile, but her lips didn't move. She knew that if she didn't go now, she would regret it, they would regret it."
+
+    "'Perhaps, I'm the one who's missing that trigger.'"
 
 # menu:
 
