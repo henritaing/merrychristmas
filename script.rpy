@@ -13,7 +13,7 @@ define t = Character('Tom', color = "#006f64")
 
 
 # True if the player has decided to compare a VN to a book.
-default route_A = 0
+default affinity_with_arthur = 0
 default choixsuite2_1 = False
 
 
@@ -996,6 +996,9 @@ label start:
         a "Thank you. Maybe, I'll join a charity association. Finally."
 
         "He said with a little smile."
+
+        affinity_with_arthur += 1 
+
         jump suite3_2_2
 
     label suite3_2_2:
@@ -1187,7 +1190,7 @@ label start:
         a "Yup."
         j "Just to be sure. Don't you have anybody you fancy? Not love, but like?"
         a "Nope."
-        j "Good. I'll go bck to my room to study."
+        j "Good. I'll go bck to my room to study."  
         a "Sure you will weirdo."
         j "See you for dinner, weirdo number two."
 
@@ -1249,6 +1252,7 @@ label start:
     menu:
 
         "Wave back.":
+            affinity_with_arthur += 1
             jump suite4_2_1
 
         "Act like you didn't see it.":
@@ -1314,6 +1318,11 @@ label start:
 
     "Jeanne leapt out of her bed with the pillow in hand."
     "She went out of her comfortable room. Her mind was awake and ready. One last step and she'd have vision on the enemy territory."
+
+    scene bg Livingroom_Night
+
+    #show carolina
+
     "To surprise the enemy and to avoid any bullet coming her way, she rolled over and lifted her head up, prepared to fire at any threat, only to see a beautiful brunette with a cup of coffee in her hand. It was Carolina."
 
     a "She skipped a year, so her mental age has a bit to catch up."
@@ -1395,6 +1404,7 @@ label start:
     scene bg another_school_building_day with fade
     show lise smile at left
     show jeanne casual smile at right
+
     "Grey. That was the taste of the coffee Jeanne felt on her tongue as she looked at the moody skies and the concrete walls surrounding her in silence. But, the taste changed as soon as she saw Elise texting. A newfound sweetness circled around her palette. She held back from teasing her friend, but she couldn't hold back her curiosity."
     
     j "How's it going?"
@@ -1456,6 +1466,7 @@ label start:
     scene bg Street_Summer_Evening
     
     "On the road, she met her brother who was taking his daily walk."
+
     show arthur smile at right
     
     a "Don't tell me you're going to meet friends"
@@ -1488,163 +1499,273 @@ label start:
 
     "He waved her goodbye as she quickened her pace."
 
-    scene black with dissolve
+    menu:
 
-    #transition
+        "Invite Elise.": 
 
-    scene lise smile at center
-    
-    "Elise had decided to properly wash her hair, but it was taking hours. It had gotten much longer. It reached her waist now. She was rinsing it thoroughly after using her new conditioner when her phone rang in the kitchen."
-    "After enveloping her hair in a towel, and her body in another, she treaded carefully to not bump into her trash bin or her piles of study books."
+            if affinity_with_arthur = 2:
+                jump suite5_1_1 
 
-    "“Jeanne is eating out. I planned food for two. Do you want to come over for dinner at eight?” Arthur had messaged."
+            else:
+                jump suite5_1_2
+                
 
-    " It was only three short and clear sentences. Yet, Elise needed a minute to process the information. She jumped on her bed and dove her head in one of the giant cushions, her legs kicking in the air."   
-    "Was that a home date? Good thing she didn't have a shift at the restaurant." 
-    "What could she wear? Casual would be the sound option."
-    "Elise rummaged in her wardrobe." 
-    "Pants? Or a classic dress? What color palette would go well with the season? What color did he like? What was the temperature outside? Her two neurons were playing question-table-tennis at this stage." 
-    "Time was ticking. She looked at the mess of knocked-down clothes, and sighed at the idea of folding them later. She put on random black matching underwear, a beige blouse long sleeve, a white shirt, and electric blue jeans. Blue always matched her eyes."
-    "She dried off her hair and bolted off to the bus station and caught the bus in extremis. Wiping the sweat off her forehead, a wide grin was placated on her face. She was so thrilled and stressed out at the same time that she couldn't stop her finger from nervously tapping on her leg."
-    "Arthur appeared at the door in an red apron over a black shirt, black joggings."
+        "No, that could lead to misunderstandings.": 
 
-    
-    show arthur smile at right
+            jump suite5_1_2
 
-#show elise with dress
-    a "Do you drink?" 
-    e "Sure."
+    label suite5_1_1:
 
-    show bg_condo
+        "Arthur took out his phone and sent a small text."
 
-    "He opened a bottle of wine and poured themselves two glasses."
-    "Then, Elise realized she came empty-handed."
+         scene black with dissolve
 
-    e "Sorry. I forgot to bring something."
-    a "No big deal."
-    e "Next time, I'll bring over some drinks at least."
-    a "Sure. As long it's nothing fancy. I'd feel bad otherwise."
+        #transition
 
-    "He made her sit while he continued cooking. Humming an unfamiliar tune, his soft voice flowed around the kitchen."
-    "No need to overthink it."
-    "She took a deep breath and reset her mind."
-    "It reminded her of their first encounter, the one he didn't remember. The scent of freshly cut tomatoes, the dim lighting and the sound of his voice gently lulled her into peace. Her nervous finger lay down as her eyes followed his back."
-    "Obviously, it wasn't a home date. Still, she could enjoy this moment, right?"
+        scene lise smile at center
+        
+        "Elise had decided to properly wash her hair, but it was taking hours. It had gotten much longer. It reached her waist now. She was rinsing it thoroughly after using her new conditioner when her phone rang in the kitchen."
+        "After enveloping her hair in a towel, and her body in another, she treaded carefully to not bump into her trash bin or her piles of study books."
 
-    a "Sorry, I was in my thoughts."
+        "“Jeanne is eating out. I planned food for two. Do you want to come over for dinner at eight?” Arthur had messaged."
 
-    "He laid two bolws on the table for the salad."
+        " It was only three short and clear sentences. Yet, Elise needed a minute to process the information. She jumped on her bed and dove her head in one of the giant cushions, her legs kicking in the air."   
+        "Was that a home date? Good thing she didn't have a shift at the restaurant." 
+        "What could she wear? Casual would be the sound option."
+        "Elise rummaged in her wardrobe." 
+        "Pants? Or a classic dress? What color palette would go well with the season? What color did he like? What was the temperature outside? Her two neurons were playing question-table-tennis at this stage." 
+        "Time was ticking. She looked at the mess of knocked-down clothes, and sighed at the idea of folding them later. She put on random black matching underwear, a beige blouse long sleeve, a white shirt, and electric blue jeans. Blue always matched her eyes."
+        "She dried off her hair and bolted off to the bus station and caught the bus in extremis. Wiping the sweat off her forehead, a wide grin was placated on her face. She was so thrilled and stressed out at the same time that she couldn't stop her finger from nervously tapping on her leg."
+        "Arthur appeared at the door in an red apron over a black shirt, black joggings."
 
-    a "The lasagnas will be ready in a few minutes. I'm not used to people arriving on time."
+        
+        show arthur smile at right
+        show lise smile at left
 
-    "He took a sip of wine."
+        a "Do you drink?" 
+        e "Sure."
 
-    a "How were your exams?"
-    e "Nothing big. Hard work pays off."
-    a "That's more than big."
+        show bg_condo
 
-    "Elise tented her fingers."
+        "He opened a bottle of wine and poured themselves two glasses."
+        "Then, Elise realized she came empty-handed."
 
-    e "And you?"
-    a "Can't say I didn't work hard, but would it be correct to say that it was hard work?"
-    e "I'm sure it was."
-    a "I didn't know you worked at the restaurant too."
-    e "I do some shifts here and there. Nothing too big. I started a while ago. Summer before starting college."
-    a "To make pocket money?"
-    e "Could say that. It's not as good as funding a successful startup, I have to say."
-    
-    "Arthur's left brow rose."
+        e "Sorry. I forgot to bring something."
+        a "No big deal."
+        e "Next time, I'll bring over some drinks at least."
+        a "Sure. As long it's nothing fancy. I'd feel bad otherwise."
 
-    a "Waiting tables is harder."
-    e "Why do you say so?"
-    a "Because it is physically and mentally demanding. Difficult customers. Running around the whole night. The noise, the smell and the lights. Whereas, building a company with friends around a subject you enjoy is a different matter altogether."
-    e "It's tiring some days for sure."
+        "He made her sit while he continued cooking. Humming an unfamiliar tune, his soft voice flowed around the kitchen."
+        "No need to overthink it."
+        "She took a deep breath and reset her mind."
+        "It reminded her of their first encounter, the one he didn't remember. The scent of freshly cut tomatoes, the dim lighting and the sound of his voice gently lulled her into peace. Her nervous finger lay down as her eyes followed his back."
+        "Obviously, it wasn't a home date. Still, she could enjoy this moment, right?"
 
-    "The corner of her eyes curved."
+        a "Sorry, I was in my thoughts."
 
-    e "It is also rewarding some other days. Birthdays, for example. I love seeing families smile together around a great meal and a beautiful cake."
-    a "I see."
+        "He laid two bowls on the table for the salad."
 
-    "On cue, the oven and his mobile rang."
-    "He served the steaming lasagnas winced."
+        a "The lasagnas will be ready in a few minutes. I'm not used to people arriving on time."
 
-    a "Sorry. Urgent call. Sorry, really. I hate people who're on their phones during meetings and dinners too."
+        "He took a sip of wine."
 
-    "He went into his room, leaving Elise with only her glass and her thoughts."
-    "By the time he came back, the lasagnas had gone warm and her glass had gone empty."
+        a "How were your exams?"
+        e "Nothing big. Hard work pays off."
+        a "That's more than big."
 
-    a "Sorry again."
-    a "It was faster than I expected."
-    e "The call?"
-    a "The job interview results."
+        "Elise tented her fingers."
 
-    "She stood up so fast, the room stood with her."
+        menu:
 
-    e "What? Are you going to join a charity association?"
-    a "Charity? I did mention that. But no, I'm going to Paris, to give a hand to a friend, Tom, the one you met at the restaurant."
-    a "He's a bit older and has his own company which is currently expanding. He urgently needs new, trustworthy and competent collaborators. Of course, the job in itself is interesting and the offer too, but it means that I'll have to step down from my CEO position at my company."
+        "Nod and stay silent.": 
 
-    "She felt her composure break as she sat back down."
+            jump suite5_2_1 
+                
 
-    e "When are you going?"
-    a "A week after my master's thesis presentations. In a month or so. Well, I don't think I'll miss London."
+        "Ask Arthur about his life.": 
 
-    "A piece of her heart fell off on her plate."
+            jump suite5_2_2
 
-    a "Don't make that face."
+        label suite5_2_1:
 
-    "Contradicting thoughts filled her head. She sat back down and nibbled at the lasagna. It was sadly well-made."
+            "They both looked at the red digits of the oven's timer and smiled. 
 
-    e "Are you set on it?"
-    a "I will need to discuss with my board next month, but yes, I guess. One of my colleagues will join too. She was getting tired of London, she was like ‘Where are you going like that? Trying to get out of London first, uh?"
+        
+        label suite5_2_2:
+            
+            affinity_with_arthur += 1
 
-    "Arthur chuckled."
+            e "And you?"
+            a "Can't say I didn't work hard, but would it be correct to say that it was hard work?"
+            e "I'm sure it was."
+            a "I didn't know you worked at the restaurant too."
+            e "I do some shifts here and there. Nothing too big. I started a while ago. Summer before starting college."
+            a "To make pocket money?"
+            e "Could say that. It's not as good as funding a successful startup, I have to say."
+            
+            "Arthur's left brow rose."
 
-    a "She's quite the competitive one."
+            a "Waiting tables is harder."
+            e "Why do you say so?"
+            a "Because it is physically and mentally demanding. Difficult customers. Running around the whole night. The noise, the smell and the lights. Whereas, building a company with friends around a subject you enjoy is a different matter altogether."
+            e "It's tiring some days for sure."
 
-    "Arthur gave her a glance."
+            "The corner of her eyes curved."
 
-    a "Hey, are you okay?" 
-    e "Yes."
+            e "It is also rewarding some other days. Birthdays, for example. I love seeing families smile together around a great meal and a beautiful cake."
+            a "I see."
 
-    "The news of him going to work abroad had shaken her."
+        "On cue, the oven and his mobile rang."
+        "He served the steaming lasagnas winced."
 
-    e "The lasagna was delicious."
+        a "Sorry. Urgent call. Sorry, really. I hate people who're on their phones during meetings and dinners too."
 
-    "Though the last spoons tasted bitter."
+        "He went into his room, leaving Elise with only her glass and her thoughts."
+        "By the time he came back, the lasagnas had gone warm and her glass had gone empty."
 
-    a "A pleasure. Do you want dessert? I've baked a lemon cake."
-    e "No, that's fine. I'll go home. It's late."
+        a "Sorry again."
+        a "It was faster than I expected."
+        e "The call?"
+        a "The job interview results."
 
-    "She bit her lips. Her tone came off a little rude."
+        "She stood up so fast, the room stood with her."
 
-    e "I think the exams tired me out."
+        e "What? Are you going to join a charity association?"
+        a "Charity? I did mention that. But no, I'm going to Paris, to give a hand to a friend, Tom, the one you met at the restaurant."
+        a "He's a bit older and has his own company which is currently expanding. He urgently needs new, trustworthy and competent collaborators. Of course, the job in itself is interesting and the offer too, but it means that I'll have to step down from my CEO position at my company."
 
-    "She went to get her coat by reflex, but forgot that she didn't bring one."
+        "She felt her composure break as she sat back down."
 
-    a "I'll drive you home. It should be quite chilly outside."
+        #show elise sad
 
-    "She avoided his eyes in a desperate attempt to contain her sudden surge of emotions."
+        menu:
 
-    e "It's fine. It's fine."
+        "Ask him what he will be going.": 
 
-    "Elise couldn't tell him it was about him leaving London. Although they had become much closer, she wasn't anybody to him. Even if she was, she would never want him to base his career choices on her personal feelings. It would be too selfish and unfair. Wouldn't it?"
-    "His phone rang again."
-    
-    a "I'm sorry."
+            affinity_with_arthur += 1
+            jump suite5_3_1 
+                
 
-    "She opened the door."
+        "Don't ask anything.": 
 
-    e "Don't apologize. It's fine. Work is work. I know what it is. I was going to go regardless."
+            jump suite5_3_2
 
-    "Elise tried to smile, but her lips didn't move. She knew that if she didn't go now, she would regret it, they would regret it."
+        label suite5_3_1:
 
-    "'Perhaps, I'm the one who's missing that trigger.'"
+            e "When are you going?"
+            a "A week after my master's thesis presentations. In a month or so. Well, I don't think I'll miss London."
+
+            "A piece of her heart fell off on her plate."
+
+            a "Don't make that face."
+        
+        label suite5_3_2:
+            
+            "She bit her lip in silence."
+
+        "Contradicting thoughts filled her head. She sat back down and nibbled at the lasagna. It was sadly well-made."
+
+        e "Are you set on it?"
+        a "I will need to discuss with my board next month, but yes, I guess. One of my colleagues will join too. She was getting tired of London, she was like 'Where are you going like that? Trying to get out of London first, uh?'"
+
+        "Arthur chuckled."
+
+        a "She's quite the competitive one."
+
+        "Arthur gave her a glance."
+
+        a "Hey, are you okay?" 
+        e "Yes."
+
+        "The news of him going to work abroad had shaken her."
+
+        e "The lasagna was delicious."
+
+        "Though the last spoons tasted bitter."
+
+        a "A pleasure. Do you want dessert? I've baked a lemon cake."
+        e "No, that's fine. I'll go home. It's late."
+
+        "She bit her lips. Her tone came off a little rude."
+
+        e "I think the exams tired me out."
+
+        "She went to get her coat by reflex, but forgot that she didn't bring one."
+
+        a "I'll drive you home. It should be quite chilly outside."
+
+        "She avoided his eyes in a desperate attempt to contain her sudden surge of emotions."
+
+        e "It's fine. It's fine."
+
+        "Elise couldn't tell him it was about him leaving London. Although they had become much closer, she wasn't anybody to him. Even if she was, she would never want him to base his career choices on her personal feelings. It would be too selfish and unfair. Wouldn't it?"
+        "His phone rang again."
+        
+        a "I'm sorry."
+
+        e "I..."
+
+        menu:
+
+        "It's just that... I would have loved to spend more time with you.": 
+
+            if affinity_with_arthur >= 3:
+                jump suite5_4_1 
+
+            else:
+                jump suite5_4_2
+                
+
+        "Nothing.": 
+
+            jump suite5_4_2
+
+        label suite_5_4_1:
+            
+            a "Me too."
+            
+            "He slightly smiled."
+
+            a "Paris is not that far. I'll come around once in a while to visit anyways."
+
+            affinity_with_arthur += 1
+
+            jump suite_5_4_2
+
+        label suite_5_4_2: 
+
+            "Elise stayed silent."
+
+            a "I've gotta go. Sorry."
+
+        "She opened the door."
+
+        e "Don't apologize. It's fine. Work is work. I know what it is. I was going to go regardless."
+
+        "Elise tried to smile, but her lips didn't move. She knew that if she didn't go now, she would regret it, they would regret it."
+
+        "'Perhaps, I'm the one who's missing that trigger.'"
+
+        if affinity_with_arthur < 4:
+
+            jump suite5_1_2
+        
+
+
+    label suite5_1_2:
+        
+        scene black with dissolve
+        #Chapter 5
+        show text "End A : A" with Pause(8)
+        return
+        
+
+   
 
 # menu:
 
 #     "It's a videogame.":
-#         jump game
+#         jump game_
 
 #     "It's an interactive book.":
 #         jump book
